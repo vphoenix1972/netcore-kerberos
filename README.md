@@ -65,11 +65,11 @@ ktpass -princ HTTP/netcore-kerberos.mydomain.com@MYDOMAIN.COM -mapuser MYDOMAIN\
 
 4) Скопировать файл krb5.keytab на Linux машину. Например, в ~/netcore-kerveros-volume
 
-5) Для того, чтобы windows при запросе kerberos тикета автоматически пересылал его, нужно настроить следующие параметры:
+5) Для того, чтобы windows при запросе kerberos тикета автоматически пересылал его, нужно настроить следующие параметры:    
 На машине пользователя, с которого планируем заходить на наш сервер,
-открываем Internet Explorer, открываем Internet Options,Вкладка Security, выбираем Internet, нажимаем кнопку Custom Level, находим пункт User Authentication, Logon, выбираем "Automatic Logon with current user name and password"
+открываем Internet Explorer, открываем Internet Options, Вкладка Security, выбираем Internet, нажимаем кнопку Custom Level, находим пункт User Authentication, Logon, выбираем "Automatic Logon with current user name and password"    
 По умолчанию выбрана настройка "Automatic logon only in Intranet zone", поэтому
-можно просто добавить DNS адрес сервера в Intranet Zone, чтобы тикет пересылался автоматически.
+можно просто добавить DNS адрес сервера в Intranet Zone, чтобы тикет пересылался автоматически.    
 Все эти настройки можно настроить и через доменные политики Active Directory.
 
 
@@ -83,13 +83,13 @@ docker run -p 5100:80 -v ~/netcore-kerveros-volume:/mnt/volume --hostname netcor
 ```
 Порт можно выбрать любой.
 
-Заходим с другой windows машины, введенной в домен, на адрес netcore-kerberos.mydomain.com
+Заходим с другой windows машины, введенной в домен, на адрес netcore-kerberos.mydomain.com    
 Нас должно успешно авторизовать и показать доменное имя пользователя.
 
 Enjoy!
 
 ---
-https://blogs.manageengine.com/active-directory/2018/08/02/securing-zone-levels-internet-explorer.html
- https://techtime.co.nz/display/TECHTIME/How+do+I+add+a+trusted+site+to+my+Local+Intranet+Zone+using+a+Group+Policy
-https://docs.microsoft.com/ru-ru/aspnet/core/security/authentication/windowsauth?view=aspnetcore-5.0&tabs=visual-studio
+https://blogs.manageengine.com/active-directory/2018/08/02/securing-zone-levels-internet-explorer.html    
+ https://techtime.co.nz/display/TECHTIME/How+do+I+add+a+trusted+site+to+my+Local+Intranet+Zone+using+a+Group+Policy    
+https://docs.microsoft.com/ru-ru/aspnet/core/security/authentication/windowsauth?view=aspnetcore-5.0&tabs=visual-studio    
 https://docs.microsoft.com/ru-ru/aspnet/core/security/authentication/windowsauth?view=aspnetcore-5.0&tabs=visual-studio#linux-and-macos-environment-configuration
